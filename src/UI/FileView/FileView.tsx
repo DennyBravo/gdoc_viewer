@@ -304,13 +304,6 @@ export class FileView extends React.Component<Props, State> {
                 disabled={!isChangedFilters}>
                 Clear filters
             </Button>
-            <Button
-                className={S.bottomButton}
-                onClick={() => this.handleSignoutClick()}
-                size="m"
-                variant="default">
-                Logout
-            </Button>
         </div>;
     }
 

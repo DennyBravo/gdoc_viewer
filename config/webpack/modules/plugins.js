@@ -44,9 +44,9 @@ const plugins = [
     mode: 'webapp', // optional can be 'webapp' or 'light' - 'webapp' by default
     devMode: 'webapp', // optional can be 'webapp' or 'light' - 'light' by default
     favicons: {
-      appName: 'Mercaux',
-      appDescription: 'Mercaux',
-      developerName: 'Mercaux',
+      appName: 'Test',
+      appDescription: 'Test',
+      developerName: 'Test',
       developerURL: null, // prevent retrieving from the nearest package.json
       background: '#fff',
       theme_color: '#00B19D',
