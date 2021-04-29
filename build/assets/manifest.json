@@ -1,7 +1,7 @@
 {
-  "name": "Mercaux",
-  "short_name": "Mercaux",
-  "description": "Mercaux",
+  "name": "Test",
+  "short_name": "Test",
+  "description": "Test",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",
