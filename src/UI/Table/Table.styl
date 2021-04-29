@@ -1,0 +1,130 @@
+@import '~theme'
+
+$minRowHeight = 40px
+
+$borderColor = var(--default-color)
+$hoverBorderColor = var(--brand-navy-blue-color)
+
+$border = inset -2px 2px 0 -1px $borderColor
+$borderHeader = inset 0px -2px 0 -1px $borderColor
+$lastBorder = inset 1px 2px 0 -1px $borderColor
+$lastHeadBorder = inset 0 -2px 0 -1px $borderColor
+$hoverBorder = inset 0 3px 0 -1px $hoverBorderColor, inset 0 -3px 0 -1px $hoverBorderColor
+
+.table
+  width 'calc(100% - %s)' % 4px
+  border-spacing 0
+
+  th
+    z-index 1
+    position sticky
+    top 0
+    height $minRowHeight
+    white-space nowrap
+    text-align left
+    box-shadow $borderHeader
+
+  td
+  tfoot th
+    box-shadow $border
+
+  td:last-child
+  tfoot th:last-child
+    box-shadow $lastBorder
+
+  tr:hover td
+    box-shadow $hoverBorder, $border
+
+    &:first-child
+      box-shadow $hoverBorder, inset 2px 0 0 0 $hoverBorderColor, $border
+    &:last-child
+      box-shadow $hoverBorder, inset -2px 0 0 0 $hoverBorderColor, $lastBorder
+
+  thead
+
+    th
+      background-image linear-gradient(to bottom, var(--white-color), var(--white-color-alpha-900))
+
+      &:last-child
+        box-shadow $lastHeadBorder
+
+    td
+      box-shadow inset 0 -2px 0 -1px $borderColor
+      height 100%
+
+  tbody tr
+    min-height $minRowHeight
+
+  tfoot
+    th
+      top auto
+      font-weight bold
+      background-color var(--white-color-alpha-900)
+
+    tr:first-child th
+      bottom 46px
+
+    tr:last-child th
+      bottom 0
+
+
+.cellInner
+.sortButton
+  padding 14px 16px
+
+.cellInner
+  z-index -1
+  position relative
+  display -webkit-box
+  height 46px
+  width 100%
+
+  vertical-align middle
+  -webkit-line-clamp 3
+  -webkit-box-orient vertical
+  word-break break-word
+  overflow hidden
+  text-overflow ellipsis
+  font-size 14px
+  color var(--accent-color)
+
+  tbody &
+    clip-path polygon(0 0, 0 calc(100% - 10px), 100% calc(100% - 10px), 100% 0)
+
+.alignCenter
+  text-align center
+  & > .sortButton
+  & > .cellInner
+    text-align center
+
+.alignRight
+  text-align right
+  & > .sortButton
+  & > .cellInner
+    text-align right
+
+.alignLeft
+  text-align left
+  & > .sortButton
+  & > .cellInner
+    text-align left
+
+.sortButton
+  display block
+  font-size 14px
+  font-weight 600
+  width 100%
+  color var(--accent-color)
+  height auto
+  border 0
+  border-radius 0
+  border-left 0
+  border-right 0
+  text-align left
+
+  &:active
+    transform none
+
+.loading
+  opacity .7
+  pointer-events none

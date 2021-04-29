@@ -1,0 +1,67 @@
+$whiteColor = #fff
+$grayColor = #676a6c
+$grayBlueColor = #8092a4
+$grayBlueLightColor = #B8C3CE
+$text1Color = #343d49
+$accentColor = #1a1f25
+$brandNavyBlue = #3B3557
+$platformBg = #fafbfd
+$platformBgNew = #f1f3f6
+$text2Color = #81888f
+$text3Color = #9a9ea4
+$basicLineColor = #e9edf2
+$disableColor = #f1f1f2
+$defaultColor = #dde2e9
+$primaryColor = #00b19d
+$secondaryColor = #e3f9f5
+$warningColor = #ffa31a
+$dangerColor = #da3749
+
+$fontRest = "'open sans', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+font(style)
+  if style == 'light'
+    return "'Proxima Nova Light', %s" % $fontRest
+  if style == 'bold'
+    return "'Proxima Nova Bold', %s" % $fontRest
+  else
+    return  "'Proxima Nova', %s" % $fontRest
+
+shadow()
+  box-shadow inset 0 0 0 1px $basicLineColor, 0px 4px 8px alpha($accentColor, 0.05)
+
+controlBorder(color, args...)
+  if color
+    border 1px solid color args
+  else
+    border none args
+
+controlFocus(color, size = 4px)
+  if color
+    box-shadow 0 0 0 size color
+  else
+    box-shadow none
+
+controlContentColors(color, args...)
+  &
+  & svg
+    color color args
+
+borderRadiusSize(size, args...)
+  if size == 's'
+    border-radius 4px args
+  if size == 'm'
+    border-radius 6px args
+  if size == 'l'
+    border-radius 8px args
+  if size == 'xl'
+    border-radius 10px args
+
+controlFontSize(size)
+  if size == 's'
+    font-size 14px
+  if size == 'm'
+    font-size 16px
+  if size == 'l'
+    font-size 18px
+  if size == 'xl'
+    font-size 18px

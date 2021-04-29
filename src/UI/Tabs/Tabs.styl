@@ -1,0 +1,51 @@
+@import '~theme'
+
+.root
+  position relative
+  display flex
+  align-items center
+
+.item
+  height 28px
+
+  a
+    color var(--text-color) !important
+
+  &
+  &:hover
+  &:focus
+    border 1px solid var(--default-color)
+
+  & + &
+    margin-left -1px
+
+  &:not(:first-child)
+    border-top-left-radius 0
+    border-bottom-left-radius 0
+
+  &:not(:last-child)
+    border-top-right-radius 0
+    border-bottom-right-radius 0
+
+  &:hover
+  &:focus
+    transform translateZ(0)
+
+  &:focus
+    z-index 1
+
+  &:hover
+    z-index 2
+
+  &.active
+    &
+    &:hover
+    &:focus
+      transition none
+      background-color var(--brand-navy-blue-color)
+      border-top none
+      border-bottom none
+
+    &
+    & [role=img]
+      color var(--white-color)
